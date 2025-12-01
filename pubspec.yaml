@@ -1,0 +1,48 @@
+name: dashboard_financeiro
+description: "Dashboard Financeiro com BLoC, SQFlite e Charts."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '^3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI
+  cupertino_icons: ^1.0.8
+  flutter_colorpicker: ^1.0.3
+  device_preview: ^1.1.0
+
+  # BLoC
+  flutter_bloc: ^8.1.4
+  equatable: ^2.0.5
+
+  # Banco de dados local
+  sqflite: ^2.3.0
+  path_provider: ^2.1.3
+  path: ^1.8.0
+
+  # Charts
+  fl_chart: ^0.68.0
+
+  # Utilities
+  shared_preferences: ^2.0.15
+  syncfusion_flutter_charts: ^31.2.12
+  flutter_echarts: ^2.5.0
+
+  # Hasura GraphQL
+  graphql_flutter: ^5.2.0
+  data_table_2: ^2.7.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
