@@ -53,6 +53,15 @@ lib/
 ```
 UI → Event → BLoC → State → UI
 ```
+- UI (Interface do Usuário): O usuário faz alguma ação na tela, como clicar em um botão ou digitar algo.
+
+- Event (Evento): A UI envia um evento para o BLoC avisando o que aconteceu.
+
+- BLoC (Lógica de Negócio): O BLoC recebe o evento, processa a lógica necessária e decide o que fazer.
+
+- State (Estado): Depois de processar, o BLoC gera um novo estado representando o resultado.
+
+- UI (Atualização da Tela): A interface escuta as mudanças de estado e se atualiza automaticamente.
 
 ## 🛠️ Tecnologias Utilizadas
 
