@@ -177,26 +177,55 @@ flutter clean
 
 ### Tabela: `transactions`
 ```sql
+-- Cria a tabela de transações financeiras
 CREATE TABLE transactions (
+  
+  -- Identificador único da transação (chave primária)
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  
+  -- ID da categoria associada à transação (relacionamento com categories)
   categoryId INTEGER NOT NULL,
+  
+  -- Valor da transação (REAL aceita números decimais)
   amount REAL NOT NULL,
+  
+  -- Descrição opcional da transação (ex.: "Supermercado", "Salário")
   description TEXT,
+  
+  -- Data da transação armazenada como texto (ex.: "2025-01-10")
   date TEXT NOT NULL,
+  
+  -- Indica se é uma receita (1) ou despesa (0)
   isIncome INTEGER NOT NULL,
+  
+  -- Chave estrangeira, garantindo que categoryId exista na tabela categories
   FOREIGN KEY (categoryId) REFERENCES categories(id)
 );
+
 ```
 
 ### Tabela: `categories`
 ```sql
+-- Cria a tabela de categorias
 CREATE TABLE categories (
+
+  -- Identificador único da categoria (chave primária)
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+  -- Nome da categoria (ex.: "Alimentação", "Salário")
+  -- UNIQUE garante que não existam dois nomes iguais
   name TEXT NOT NULL UNIQUE,
+
+  -- Cor associada à categoria (geralmente armazenada como inteiro hexadecimal)
   color INTEGER NOT NULL,
+
+  -- Ícone opcional representado como texto (pode armazenar o nome do ícone)
   icon TEXT,
+
+  -- Indica se a categoria é de receita (1) ou despesa (0)
   isIncome INTEGER NOT NULL
 );
+
 ```
 
 ## 🎨 Paleta de Cores
